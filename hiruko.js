@@ -12,6 +12,7 @@
   ꕥ Ryuuka Team (Recode)
   ꕥ Penyedia Module
   ꕥ Penyedia Api
+  ꕥ KokoRey
   ꕥ User RYUMD 
 **/   
 
@@ -1079,16 +1080,16 @@ global.namaowner
   reply(mess.done)
   }
   break
-  case 'public': {
+  case 'umum': {
   if (!isCreator && !m.key.fromMe) return reply(mess.owner)
   ryuu.public = true
-  reply('Sukses Mengubah Mode Bot Menjadi Publik')
+  reply('Sukses Mengubah Mode Bot Menjadi Umum')
   }
   break
-  case 'self': {
+  case 'pribadi': {
   if (!isCreator && !m.key.fromMe) return reply(mess.owner)
   ryuu.self = false
-  reply('Sukses Mengubah Mode Bot Menjadi Self')
+  reply('Sukses Mengubah Mode Bot Menjadi Pribadi')
   }
   break
   case 'eval': {
@@ -1350,7 +1351,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   await ryuu.sendButtonText(m.chat, buttonsevent, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, ftroli)
   }
   break
-  case 'kick': {
+  case 'huss': {
   if (!m.isGroup) return reply(mess.group)
   if (!isBotAdmins) return reply(mess.botAdmin)
   if (!isGroupAdmins) return reply(mess.admin)
@@ -1359,7 +1360,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   await ryuu.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(kickUser())).catch((err) => reply(fiturError(prefix)))
   }
   break
-  case 'add': {
+  case 'sini': {
   if (!m.isGroup) return reply(mess.group)
   if (!isBotAdmins) return reply(mess.botAdmin)
   if (!isGroupAdmins) return reply(mess.admin)
@@ -1369,7 +1370,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   await ryuu.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(addUser())).catch((err) => reply(fiturError(prefix)))
   }
   break
-  case 'promote': {
+  case 'admin': {
   if (!m.isGroup) return reply(mess.group)
   if (!isBotAdmins) return reply(mess.botAdmin)
   if (!isGroupAdmins) return reply(mess.admin)
@@ -1378,7 +1379,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   await ryuu.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(proMote())).catch((err) => reply(fiturError(prefix)))
   }
   break
-  case 'demote': {
+  case 'babu': {
   if (!m.isGroup) return reply(mess.group)
   if (!isBotAdmins) return reply(mess.botAdmin)
   if (!isGroupAdmins) return reply(mess.admin)
